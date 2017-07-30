@@ -27,9 +27,15 @@ describe('Player', function(){
 		assert.equal(player.getLevel(), 20);
 	});
 
-	it("When i input 3400, a string should be returned '3400/4987' ", function(){
+	it("When 3400 is entered, a string should be returned '3400/4987' ", function(){
 		assert.equal(player.experienceToLevel(3400), "3400/4987");
 	});
+
+	it("getPercentageToLevel should return 68% after calling experienceToLevel(3400)" ,
+		function(){
+			player.experienceToLevel(3400);
+			assert.equal(player.getPercentageToLevel(), 4);
+		})
 
 
 
